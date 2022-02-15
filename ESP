@@ -89,8 +89,9 @@ for D, E in next, a:GetChildren() do
 			Front = Drawing.new("Line")
 		}
 	}
-end;local function F()
-	for G, E in next, c do local function H(table)
+end;
+getgenv().F = function()
+	for G, E in next, c do getgenv() H = function(table)
 			for G, E in pairs(table) do
 				if type(E) == "table" and E.ZIndex ~= 0 then
 					H(E)
@@ -101,7 +102,8 @@ end;local function F()
 		end;
 		H(E)
 	end
-end;local function I(J)local function H(table)
+end;
+getgenv().I = function(J)getgenv().H = function(table)
 		for G, E in pairs(table) do
 			if type(E) == "table" and E.ZIndex ~= 0 then
 				H(E)
@@ -112,7 +114,8 @@ end;local function I(J)local function H(table)
 	end;
 	H(c[J])
 	c[J] = nil
-end;local function K()
+end;
+getgenv().K =  function()
 	local L = c;
 	for G, D in next, c do
 		if not a:FindFirstChild(tostring(G)) then
@@ -186,7 +189,7 @@ end;local function K()
 		end
 	end;
 	c = L
-end;local function M(N)
+end;getgenv().M = function M(N)
 	local O = N.CFrame;
 	local P = N.Size;
 	local Q = {}
@@ -205,7 +208,8 @@ end;local function M(N)
 	Q.bottomBackRight = (W + W.RightVector * P.X / 2).Position;
 	Q.bottomBackLeft = (W - W.RightVector * P.X / 2).Position;
 	return Q
-end;local function X(Y)
+end;
+getgenv().X = function(Y)
 	local Z = {
 		head = {},
 		torso = {},
@@ -233,7 +237,7 @@ end;local function X(Y)
 	Z.rightLeg.to = e:WorldToViewportPoint((a4.topFrontLeft + a4.topBackRight) / 2)
 	Z.rightLeg.from = e:WorldToViewportPoint((a4.bottomFrontLeft + a4.bottomBackRight) / 2)
 	return Z
-end;local function a5(Y)
+end;getgenv().a5 = function(Y)
 	local Z = {
 		head = {},
 		upperTorso = {},
@@ -283,8 +287,8 @@ end;local function a5(Y)
 	Z.leftLowerLeg.from = e:WorldToViewportPoint((ae.bottomFrontLeft + ae.bottomBackRight) / 2)
 	return Z
 end;
-local function af()
-	K()local function ag(ah, ai, aj, ak, al, am, an)
+getgenv().af =  function()
+	K()getgenv().ag = function (ah, ai, aj, ak, al, am, an)
 		local ao = ah;
 		ao.Visible = al;
 		ao.From = aj;
@@ -292,7 +296,7 @@ local function af()
 		ao.Color = ak;
 		ao.Thickness = am;
 		ao.Transparency = an
-	end;local function ap(ah, aq, ak, al, am, ar, an, as, at)
+	end;getgenv().ap = function(ah, aq, ak, al, am, ar, an, as, at)
 		local au = ah;
 		au.Visible = al;
 		au.Position = aq;
@@ -307,10 +311,10 @@ local function af()
 		local av = a[G]
 		local aw = {
 			["286090429"] = {
-				Health = function()
+				getgenv().Health = function()
 					return av.NRPBS.Health.Value
 				end,
-				MaxHealth = function()
+				getgenv().MaxHealth = function()
 					return av.NRPBS.MaxHealth.Value
 				end
 			}
@@ -370,26 +374,26 @@ local function af()
 			end;
 			if x then
 				local aL = {
-					["Bottom of Screen"] = function()
+					getgenv().["Bottom of Screen"] = function()
 						return Vector2.new(e.ViewportSize.X / 2, e.ViewportSize.Y)
 					end,
-					["Center of Screen"] = function()
+					getgenv().["Center of Screen"] = function()
 						return Vector2.new(e.ViewportSize.X / 2, e.ViewportSize.Y / 2)
 					end,
-					["Mouse"] = function()
+					getgenv().["Mouse"] = function()
 						return Vector2.new(i.X, i.Y + (e.ViewportSize.Y - i.ViewSizeY) / 2)
 					end
 				}
 				local aM = {
-					["Head"] = function()
+					getgenv().["Head"] = function()
 						return Vector2.new(math.clamp(aA, 0, e.ViewportSize.X), math.clamp(aB, 0, e.ViewportSize.Y))
 					end,
-					["Torso"] = function()
+					getgenv().["Torso"] = function()
 						local a0 = ax:FindFirstChild("UpperTorso") or ax:FindFirstChild("Torso")
 						local aN = e:WorldToViewportPoint(a0.CFrame.Position or a0.CFrame.Position)
 						return Vector2.new(math.clamp(aN.X, 0, e.ViewportSize.X), math.clamp(aN.Y, 0, e.ViewportSize.Y))
 					end,
-					["Bottom of Player"] = function()
+					getgenv().["Bottom of Player"] = function()
 						local aO, aP = ax:GetBoundingBox()
 						aO = aO - (aO.Position - ax.HumanoidRootPart.CFrame.Position)
 						local aQ = M({
@@ -503,5 +507,3 @@ local function af()
 		end
 	end
 end;
-getgenv().I = I 
-getgenv().F = F
