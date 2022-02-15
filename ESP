@@ -503,3 +503,5 @@ local function af()
 		end
 	end
 end;
+getgenv().I = I 
+getgenv().F = F
