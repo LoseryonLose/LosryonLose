@@ -368,7 +368,7 @@ getgenv().af =  function()
 			end;
 			if s and ax.Humanoid.Health <= 0 then
 				az = false
-			end;local function aJ(O)
+			end;getgenv().aJ = function(O)
 				local aK = e:WorldToViewportPoint(O)
 				return Vector2.new(aK.X, aK.Y)
 			end;
