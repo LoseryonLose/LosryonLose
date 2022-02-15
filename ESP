@@ -467,12 +467,12 @@ getgenv().af =  function()
 				local b4 = aJ((aQ.bottomFrontRight + aQ.bottomBackRight) / 2)
 				b3 = Vector2.new(b3.X - 10, b3.Y)
 				b4 = Vector2.new(b3.X, b4.Y)
-				ag(E.HealthBar.Back, b3, b4, Color3.fromRGB(255,255,255), az, e.ViewportSize.X / 192, 1)
+				ag(E.HealthBar.Back, b3, b4, Color3.fromRGB(0,128,255), az, e.ViewportSize.X / 192, 1)
 				local b5 = ax.Humanoid.Health or aw[tostring(game.PlaceId)].Health()
 				local b6 = ax.Humanoid.MaxHealth or aw[tostring(game.PlaceId)].MaxHealth()
 				local b7 = b5 / b6;
 				local aR = (b3 - b4).Magnitude * b7;
-				ag(E.HealthBar.Front, Vector2.new(b4.X, b4.Y - aR), b4, Color3.fromRGB(255,255,255), az, e.ViewportSize.X / 192, 1)
+				ag(E.HealthBar.Front, Vector2.new(b4.X, b4.Y - aR), b4, Color3.fromRGB(51,51,255), az, e.ViewportSize.X / 192, 1)
 			end;
 			if A and t == "3D" then
 				local aO, aP = ax:GetBoundingBox()
