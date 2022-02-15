@@ -189,7 +189,7 @@ getgenv().K =  function()
 		end
 	end;
 	c = L
-end;getgenv().M = function M(N)
+end;getgenv().M = function(N)
 	local O = N.CFrame;
 	local P = N.Size;
 	local Q = {}
@@ -311,10 +311,10 @@ getgenv().af =  function()
 		local av = a[G]
 		local aw = {
 			["286090429"] = {
-				getgenv().Health = function()
+				Health = function()
 					return av.NRPBS.Health.Value
 				end,
-				getgenv().MaxHealth = function()
+				MaxHealth = function()
 					return av.NRPBS.MaxHealth.Value
 				end
 			}
@@ -374,26 +374,26 @@ getgenv().af =  function()
 			end;
 			if x then
 				local aL = {
-					getgenv().["Bottom of Screen"] = function()
+					["Bottom of Screen"] = function()
 						return Vector2.new(e.ViewportSize.X / 2, e.ViewportSize.Y)
 					end,
-					getgenv().["Center of Screen"] = function()
+					["Center of Screen"] = function()
 						return Vector2.new(e.ViewportSize.X / 2, e.ViewportSize.Y / 2)
 					end,
-					getgenv().["Mouse"] = function()
+					["Mouse"] = function()
 						return Vector2.new(i.X, i.Y + (e.ViewportSize.Y - i.ViewSizeY) / 2)
 					end
 				}
 				local aM = {
-					getgenv().["Head"] = function()
+					["Head"] = function()
 						return Vector2.new(math.clamp(aA, 0, e.ViewportSize.X), math.clamp(aB, 0, e.ViewportSize.Y))
 					end,
-					getgenv().["Torso"] = function()
+					["Torso"] = function()
 						local a0 = ax:FindFirstChild("UpperTorso") or ax:FindFirstChild("Torso")
 						local aN = e:WorldToViewportPoint(a0.CFrame.Position or a0.CFrame.Position)
 						return Vector2.new(math.clamp(aN.X, 0, e.ViewportSize.X), math.clamp(aN.Y, 0, e.ViewportSize.Y))
 					end,
-					getgenv().["Bottom of Player"] = function()
+					["Bottom of Player"] = function()
 						local aO, aP = ax:GetBoundingBox()
 						aO = aO - (aO.Position - ax.HumanoidRootPart.CFrame.Position)
 						local aQ = M({
