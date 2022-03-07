@@ -1,1 +1,1 @@
-game.Players.LocalPlayer:kikc("สคิปฟรีปิดแล้วงับ โปรดทักหาเคยอม#0064")
+game.Players.LocalPlayer:kick("สคิปฟรีปิดแล้วงับ โปรดทักหาเคยอม#0064")
